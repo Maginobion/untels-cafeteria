@@ -3,7 +3,7 @@
     <form v-on:submit.prevent="submitForm">
       <div>
         <p>Nombre:</p>
-        <input type="text" id="name" v-model="form.name">
+        <input type="text" id="name" required v-model="form.name">
       </div>
       <input type="submit" value="Confirmar">
     </form>

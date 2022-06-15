@@ -6,7 +6,9 @@
       </div>     
     </div>
     <router-link to="/">Inicio</router-link> |
-    <router-link to="/admin">Administrador</router-link>
+    <router-link to="/admin">Administrador: Agregar Usuario</router-link> |
+    <router-link to="/menuadd">Administrador: Agregar Menú</router-link> |
+    <router-link to="/menu">Ver Menú</router-link>
   </nav>
   <router-view/>
 </template>

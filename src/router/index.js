@@ -3,7 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AdminView.vue'
 import UserView from '../views/UserView.vue'
 import OrderView from '../views/OrderView.vue'
-
+import RegisterMenuView from '../views/RegisterMenuView.vue'
+import MenuView from '../views/MenuView.vue'
 
 const routes = [
   {
@@ -17,6 +18,16 @@ const routes = [
     component: AboutView
   },
   {
+    path: '/menuadd',
+    name: 'menu',
+    component: RegisterMenuView
+  },
+  {
+    path: '/menu',
+    name: 'catalog',
+    component: MenuView
+  },
+  {
     path: '/user/:id',
     name: 'user',
     component: UserView
@@ -25,7 +36,7 @@ const routes = [
     path:'/user/:id/order',
     name: 'order',
     component: OrderView
-  }
+  },
 ]
 
 const router = createRouter({
