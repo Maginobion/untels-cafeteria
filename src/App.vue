@@ -1,15 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav>
+    <div class="userCont">
+      <div v-for="user in users.data" v-bind:key="user.id">
+        <router-link :to="{ name: 'user', params:{ id: `${user.id}` } }">Usuario {{user.name}}</router-link>
+      </div>     
+    </div>
+    <router-link to="/">Inicio</router-link> |
+    <router-link to="/admin">Administrador</router-link>
+  </nav>
+  <router-view/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import axios from "axios";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  
+  data(){
+    return{
+      users: {},
+    }   
+  },
+  methods:{
+    loadUsers(){
+      axios.get('https://cafeteriaapinodejs.herokuapp.com/usuarios')
+        .then(users => this.users=users)
+    }
+  },
+  mounted(){
+    this.loadUsers()
+    console.log(this.users)
   }
 }
 </script>
@@ -21,6 +40,27 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.userCont{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 10px;
 }
 </style>
