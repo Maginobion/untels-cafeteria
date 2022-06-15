@@ -1,11 +1,12 @@
 <template>
     <div class="globalCont">
         <div v-if="ordered.length>0">
-            <div>Tus almuerzos:</div>
+            <div>Tus almuerzos comprados:</div>
             <div class="orderCont" v-for="order in ordered" v-bind:key="order">
                 <span>{{order.detalle}}</span>
-                <span v-if="order.status==1">Pedido!</span>
-                <span v-if="order.status==0">Aun no pedido</span>
+                <span>{{order.day}}</span>
+                <span v-if="order.status==1">Canjeado!</span>
+                <span v-if="order.status==0">Aun no canjeado</span>
             </div>
         </div>
         <div v-else>
