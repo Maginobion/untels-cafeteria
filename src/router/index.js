@@ -5,6 +5,7 @@ import UserView from '../views/UserView.vue'
 import OrderView from '../views/OrderView.vue'
 import RegisterMenuView from '../views/RegisterMenuView.vue'
 import MenuView from '../views/MenuView.vue'
+import PurchaseView from '../views/PurchaseView.vue'
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     name: 'order',
     component: OrderView
   },
+  {
+    path:'/user/:id/order/:almid/:selected',
+    name: 'purchase',
+    component: PurchaseView
+  }
 ]
 
 const router = createRouter({

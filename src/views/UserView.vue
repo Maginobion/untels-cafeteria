@@ -12,7 +12,7 @@
         <div v-else>
             <div>No hay almuerzos separados</div>
         </div>
-        <router-link :to="{ name: 'order', params:{ id:`${$route.params.id}` } }">Pedir almuerzo</router-link>
+        <router-link :to="{ name: 'order', params:{ id:`${$route.params.id}` } }">Comprar menú</router-link>
     </div>
 </template>
 

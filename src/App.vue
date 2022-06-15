@@ -30,7 +30,6 @@ export default {
   },
   mounted(){
     this.loadUsers()
-    console.log(this.users)
   }
 }
 </script>

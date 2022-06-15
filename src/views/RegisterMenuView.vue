@@ -76,7 +76,7 @@ export default {
                 .catch((error) => {
                     console.log(error)
                 }).finally(() => {
-                    window.location.replace('http://localhost:8081/')
+                    window.location.replace('https://dapper-boba-2c6d95.netlify.app/')
                 });
         },
         cleanDirty(){
