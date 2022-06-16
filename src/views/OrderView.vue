@@ -4,10 +4,24 @@
         Día: <input type="date" name="day" v-model="day" min="2022-06-14" max="2022-06-17"> <span>{{message}}</span>
         <div class="title">Almuerzos disponibles:</div>
         <div v-if="loaded">
-            <div v-for="dish in dayDisplay" v-bind:key="dish">
-                <input type="radio" required name="asd" v-model="selected" :value="0"> {{dish.dishes[0]}}
-                <input type="radio" required name="asd" v-model="selected" :value="1">{{dish.dishes[1]}}
-            </div>
+            <table class="flexcol" v-for="dish in dayDisplay" v-bind:key="dish">
+                <tr>
+                    <td>
+                        <input type="radio" required name="asd" v-model="selected" :value="0">
+                    </td>
+                    <td>
+                        {{dish.dishes[0]}}
+                    </td>                     
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" required name="asd" v-model="selected" :value="1">
+                    </td>
+                    <td>
+                        {{dish.dishes[1]}}
+                    </td>   
+                </tr>               
+            </table>
         </div>
         <div v-else>
             <p>Cargando...</p>
@@ -21,10 +35,14 @@ span{
     color: red;
 }
 .title{
-    margin: 20px 0 8px 0;
+    margin: 40px 0 10px 0;
+}
+table{
+    margin: auto;
+    text-align: left;
 }
 input[type=submit]{
-    margin: 20px;
+    margin: 10px;
 }
 </style>
 

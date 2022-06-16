@@ -1,9 +1,22 @@
 <template>
-    <div v-for="menu in menus.data" v-bind:key="menu">
-        <p>{{menu.day}}:</p>
-        <p>{{menu.dishes[0]}} y {{menu.dishes[1]}}</p>
-    </div>
+  <p>Menú confirmado</p>
+  <table>
+    <tr v-for="menu in menus.data" v-bind:key="menu">
+        <td>{{menu.day}}:</td>
+        <td>{{menu.dishes[0]}} y {{menu.dishes[1]}}</td>
+    </tr>
+  </table>
 </template>
+
+<style scoped>
+table{
+  margin: auto;
+}
+td{
+  text-align: start;
+  padding: 10px;
+}
+</style>
 
 <script>
 import axios from "axios";

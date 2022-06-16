@@ -1,14 +1,46 @@
 <template>
     <p>Pedido seleccionado:</p>
-    <p>Día: {{date}}</p>
-    <p>Plato: {{dishes[$route.params.selected]}}</p>    
-    <p>Precio: S./ 2.00</p>
+    <table class="first">
+        <tr>
+            <th>Día</th>
+            <th>Plato</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td>{{date}}</td>
+            <td>{{dishes[$route.params.selected]}}</td>
+            <td>S./ 2.00</td>
+        </tr>
+    </table>
     <p>Indique su medio de pago:</p>
-    Visa <input type="radio" required checked name="pago">
-    Monedero virtual <input type="radio" required name="pago">
-    <br>
+    <table>
+        <tr>
+            <td><input type="radio" required checked name="pago"></td>
+            <td>Monedero virtual</td>
+        </tr>
+        <tr>
+            <td><input type="radio" required name="pago"></td>
+            <td>Visa</td>
+        </tr>
+    </table> 
     <button @click="confirmPayment">Comprar</button>
 </template>
+
+<style scoped>
+table{
+    margin: auto;
+}
+.first>tr>td{
+    padding: 10px;
+}
+td{
+    text-align: start;
+    padding: 4px;
+}
+button{
+    margin: 20px;
+}
+</style>
 
 <script>
 import axios from "axios";

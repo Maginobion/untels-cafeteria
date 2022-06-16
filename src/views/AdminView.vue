@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <form v-on:submit.prevent="submitForm">
-      <div>
+      <div class="inputCont">
         <p>Nombre:</p>
         <input type="text" id="name" required v-model="form.name">
       </div>
@@ -37,3 +37,19 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+p{
+  margin: 2px;
+  text-align: left;
+}
+.inputCont{
+  width: fit-content;
+}
+form{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-end;
+}
+</style>

@@ -1,17 +1,19 @@
 <template>
     <form v-on:submit.prevent="submitForm">
         <div class="formStyle">
-            <div>
+            <div class="flex">
                 <p>Día:</p>
                 <input type="date" @change="cleanDirty" v-model="form.day"> <p class="error">{{message}}</p>
             </div>
-            <div>
-                <p>Menu 1:</p>
-                <input type="text" required v-model="dish1">
-            </div>
-            <div>
-                <p>Menu 2:</p>
-                <input type="text" required v-model="dish2">
+            <div class="flex moregap">
+                <div>
+                    <p>Menu 1:</p>
+                    <input type="text" required v-model="dish1">
+                </div>
+                <div>
+                    <p>Menu 2:</p>
+                    <input type="text" required v-model="dish2">
+                </div>
             </div>
             <input type="submit" value="Confirmar">
         </div>
@@ -26,16 +28,26 @@ p{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 500px;
+    width: fit-content;
 }
 .formStyle>div{
     text-align: start;
 }
 input[type=submit]{
     margin-top: 10px;
+    align-self: center;
 }
 .error{
     color: red;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.moregap{
+    margin: 15px 0;
+    gap: 40px;
 }
 </style>
 
