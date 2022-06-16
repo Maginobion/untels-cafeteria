@@ -42,6 +42,10 @@ const routes = [
     path:'/user/:id/order/:almid/:selected',
     name: 'purchase',
     component: PurchaseView
+  },
+  {
+    path: '*',
+    component: {template: <div>Error 404</div>}
   }
 ]
 
