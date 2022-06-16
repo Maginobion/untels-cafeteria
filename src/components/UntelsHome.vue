@@ -4,6 +4,9 @@
     <p>
       Para separar su almuerzo, ingrese con alguno de los usuarios.
     </p>
+    <p>
+      Para agregar usuarios o menús, use las opciones de Administrador.
+    </p>
   </div>
 </template>
 

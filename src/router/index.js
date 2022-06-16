@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AdminView.vue'
 import UserView from '../views/UserView.vue'
@@ -43,14 +43,10 @@ const routes = [
     name: 'purchase',
     component: PurchaseView
   },
-  {
-    path: '*',
-    component: {template: <div>Error 404</div>}
-  }
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
