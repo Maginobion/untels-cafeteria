@@ -1,7 +1,7 @@
 <template>
     <p>Compra de menú</p>
     <form action="post" v-on:submit.prevent="submitForm">
-        Día: <input type="date" name="day" v-model="day" min="2022-06-21" max="2022-06-25"> <span>{{message}}</span>
+        Día: <input type="date" name="day" v-model="day" min="2022-06-21" max="2022-06-24"> <span>{{message}}</span>
         <div class="title">Almuerzos disponibles:</div>
         <div v-if="loaded">
             <table class="flexcol" v-for="dish in dayDisplay" v-bind:key="dish">
